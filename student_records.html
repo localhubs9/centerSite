@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">   
+    <style>
+     html{font-size:16px}
+    body{background-color: white;}
+    *{box-sizing:border-box; font-family: 'Montserrat', sans-serif;}
+
+    .heading{display:flex;justify-content: space-between;
+padding:10px;border:1px solid black;background-color: rgb(145, 161, 173);}
+     .menue{display:flex;list-style:none;margin-right:100px;
+      gap:50px;}
+     .menue li{position:relative;}
+    .menue li a{text-decoration: none;color:black;padding:10px;display:block}
+    .submenue{display:none;position:absolute;top:100%;
+    left:0;background-color: rgb(145, 161, 173);list-style: none;
+width:220px;} 
+   .submenue li a{color:black;padding:12px;}
+   .submenue li a:hover{background-color: #eee;}
+   .menue li:hover .submenue{display:block;}
+    .menue-toggle a{font-size: 25px;display:none !important}
+   .record_heading h2{text-align: center;}
+    .logo img{width:80px}
+     .logo{margin-left:20px}
+     .form1{display:flex;flex-direction: column;align-items: center;}
+     .form_group{display:flex;flex-direction: column;align-items: center;}
+     
+      .form_box{width:400px}
+    .record_data{width:100%;
+    margin-top:30px}
+    .add_border{border:1px solid black}
+
+    .btn1{margin-top:10px}
+.record_data_1{display: none;padding:5px;margin:5px}
+.record_data_2{display:none;padding:5px;margin:5px}
+.showing{display:block}
+.table_data{border:1px solid black;border-collapse:collapse;margin:auto}
+.table_data th,td{border:1px solid black;}
+.table_data td{padding:5px}
+@media screen and (max-width:650px){
+.menue{gap:10px}
+.record_heading h2{font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 20px;
+}
+}
+
+@media screen and (max-width:500px){
+    .menue-toggle a{display:block !important ;margin:0px;
+        text-decoration:none;color:black;}
+    .record_heading{margin:auto;}
+    .record_heading h2{font-size: 16px;}    
+     #name{width:300px}
+     #student_name{width:300px}
+     #certi_no{width:300px}
+   .menue{
+   display:none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color:rgb(145, 161, 173);
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+  }
+.menue.active {
+    display: flex;
+  }
+
+  .submenue{
+    position:static;
+    width:100%;
+}
+.submenue.active{
+    display:block;
+}
+}
+
+
+@media screen and (max-width:450px)
+{
+.form_box{width:300px}
+}
+
+
+@media screen and (max-width:416px)
+{.record_heading h2{font-size: 15px;}
+
+}
+
+@media screen and (max-width:400px){
+    .welcome_para2{width:280px}
+    .section3_1 p{width:300px}
+    .section3_2 p{width:280px}
+    .map_loc{width:280px}
+    .welcome_para2{width:280px} 
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="heading">
+      <div class="logo">
+            <img src="images/logo_final.png">
+        </div>
+    <ul style="list-style: none;"><li class="menue-toggle"><a href="javascript:void(0)">☰</a></li></ul>
+    <ul class="menue">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="javascript:void(0)"class="service-toggle">OUR SERVICES</a>
+    <ul class="submenue">
+       <li><a href="javascript:void(0);"onclick="showAlert()">Computer Center</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Website Designing</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Video Editing</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Cyber Cafe</a></li> 
+    </ul></li>
+
+    <li><a href="student_records.html">STUDENT ZONE</a></li>
+    </ul> 
+    </nav>
+
+    <div class="record_heading">
+  <h2>Student's Records and there Performance<br>During various Courses.</h2>
+  </div>
+<form action="" name="f1">
+  <div class="form1">
+   
+
+    <div class="form_group">
+    <lable for="name">Name Of Student</lable>
+    <input type="text" name="naam" class="form_box" placeholder="please enter name of student for verify status">
+     </div>
+
+     <div class="form_group">
+    <lable for="number">Certificate Number</lable>
+    <input type="text" name="certi_no" class="form_box" placeholder="please enter your certificate number for verify status">
+     </div>
+
+     </form>
+     <button type="button" class="btn1" onclick="student_data()">search</button>
+  </div>
+  
+  <div class="record_data">
+    <div class="record_data_1">
+     Mr. Nitin
+     <p>This is to certify <b><u>Mr. Nitin</u></b>  Son/Daughter <b><u>Mr. Ramesh Kumar</u></b> was a Student of This institute and has successfully completed the one year course in <b>Basic and Advance  Computer Course Ms Word, Excel, Advance Excel, PowerPoint and Tally</b> From <b><u>25/04/2025</u></b> to <b><u>25/04/2026 </u></b>under Registration No 99 He/she bear good moral character.</p>
+    <h3 style="text-align: center;">Performance of student</h3>
+    <table class="table_data">
+        <tr><td>Subjects</td><td>marks Get</td><td>marks value</td></tr>
+        <tr><td><p style="margin:0px;margin-top:5px;font-weight: bold;">Basic Computer</p>
+        <p style="margin:0px;margin-top:5px">Advance Excel formulas, word, powerpoint presentation performance, Document handling reasoning</p></td><td>80</td><td>100</td></tr>
+        <tr><td><p style="margin:0px;font-weight: bold;">Photo Editing and basic Graphics</p></td><td>75</td><td>100</td></tr>
+        <tr><td><p style="margin:0px;font-weight: bold;">Tally</p></td><td>65</td><td>100</td></tr>
+        <tr><td><p style="margin:0px;font-weight: bold;">Total</p></td><td>220</td><td>300</td></tr>
+    </table>
+    </div>
+
+    <div class="record_data_2">
+    student 2 data 
+         
+    </div>
+  </div>
+
+    
+
+    <script>
+        function showAlert(){
+            alert("This page is under construction. comming soon! thanks");
+        }
+
+    let toggle=document.querySelector(".menue-toggle");
+    let menue=document.querySelector(".menue");
+    let serviceToggle = document.querySelector(".service-toggle");
+    let submenu = document.querySelector(".submenue");
+
+
+    toggle.addEventListener("click", () => {
+  menue.classList.toggle("active");
+});
+
+serviceToggle.addEventListener("click", function(){
+    submenu.classList.toggle("active");
+});
+
+let student1=document.querySelector(".record_data_1");
+let student2=document.querySelector(".record_data_2");
+let box=document.querySelector(".record_data");
+
+function student_data(){
+let n=document.f1.naam.value;
+let c=document.f1.certi_no.value;
+
+
+if(n=="nitin"||n=="Nitin" && c=="99"||c=="0099")
+{student1.classList.add("showing");
+box.classList.add("add_border");
+}
+
+
+if(n=="avneet" && c=="100")
+{student2.classList.add("showing");}
+box.classList.add("add_border");
+}
+
+    </script>
+</body>
+</html>

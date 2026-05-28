@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">   
+    <style>
+     html{font-size:16px}
+    body{background-color: white;}
+    *{box-sizing:border-box; font-family: 'Montserrat', sans-serif;}
+
+    .heading{display:flex;justify-content: space-between;
+padding:10px;border:1px solid black;background-color: rgb(145, 161, 173);}
+     .menue{display:flex;list-style:none;margin-right:100px;
+      gap:50px;}
+     .menue li{position:relative;}
+    .menue li a{text-decoration: none;color:black;padding:10px;display:block}
+    .submenue{display:none;position:absolute;top:100%;
+    left:0;background-color: rgb(145, 161, 173);list-style: none;
+width:220px;} 
+   .submenue li a{color:black;padding:12px;}
+   .submenue li a:hover{background-color: #eee;}
+   .menue li:hover .submenue{display:block;}
+    .menue-toggle a{font-size: 25px;display:none !important}
+
+    .logo img{width:80px}
+     .logo{margin-left:20px}
+     .main_section{background-color:rgb(233, 228, 224);margin:0px}
+     .section1{font-family: "Montserrat", sans-serif;
+    margin:0px;text-align: center;} 
+     .welcome_para1{color:rgb(104, 120, 130);margin:0px auto;
+    padding-top:30px;display: inline-block;
+        font-size: 40px;}
+        .welcome_para2{font-family:"Open Sans", sans-serif
+        ;margin:30px auto;
+     max-width:700px}
+     .welcome_para3{font-family: "Montserrat", sans-serif;
+    font-size: 40px;color:rgb(104, 120, 130);font-weight: 500;}
+    
+    .services_top{display:flex;justify-content: center;margin:20px}
+    .services_sub_top{background-color:rgb(147, 163, 175);border-radius: 10px;
+      border-radius:50px;padding:40px}
+    
+    .services_row_1{display:flex;flex-direction: row;gap:70px;
+    justify-content: space-evenly;padding-bottom:40px}
+    .services_row_2{display:flex;flex-direction:row;gap:70px;
+    justify-content: space-evenly;}
+    .services_1_img{border-radius:20px;}
+    .services_1_img img{max-width:200px;border-radius: 10px;}
+    .services_2_img img{max-width:200px;border-radius: 10px;}
+    .services_3_img img{max-width:200px;border-radius: 10px;}
+    .services_4_img img{max-width:200px;border-radius: 10px;}
+    .service_1_img_p1{font-size:25px;padding:0px;padding-top:10px;
+        margin:0px;font-weight: bold;color:white;font-family: "Montserrat", sans-serif;}
+    .service_1_img_p2{max-width:230px;color:white;font-family: "Open Sans", sans-serif;}
+    .btn1{background-color: rgb(146, 144, 116);border-radius: 15px;border:none;
+        padding:10px;color:white;font-weight: bold;margin-top:85px}
+   .service_2_img_p1{font-size:25px;padding:0px;padding-top:10px;
+        margin:0px;font-weight: bold;color:white;font-family: "Montserrat", sans-serif;}
+    .service_2_img_p2{max-width:230px;color:white;font-family: "Open Sans", sans-serif;}
+     .btn2{background-color: rgb(146, 144, 116);border-radius: 15px;border:none;
+        padding:10px;color:white;font-weight: bold;}
+
+        .service_3_img_p1{font-size:25px;padding:0px;padding-top:10px;
+        margin:0px;font-weight: bold;color:white;font-family: "Montserrat", sans-serif;}
+    .service_3_img_p2{max-width:230px;color:white;font-family: "Open Sans", sans-serif;}
+     .btn3{background-color: rgb(146, 144, 116);border-radius: 15px;border:none;
+        padding:10px;color:white;font-weight: bold;}
+
+        .service_4_img_p1{font-size:25px;padding:0px;padding-top:10px;
+        margin:0px;font-weight: bold;color:white;font-family: "Montserrat", sans-serif;}
+    .service_4_img_p2{max-width:230px;color:white;font-family: "Open Sans", sans-serif;}
+     .btn4{background-color: rgb(146, 144, 116);border-radius: 15px;border:none;
+        padding:10px;color:white;font-weight: bold;margin-top:20px}
+    .our_clients{}
+    .our_clients p{font-size: 30px;font-weight:bold;
+                  color:rgb(104, 120, 130)}
+
+    .review{display:flex;gap:30px;margin:auto;
+    overflow-x:auto;width:600px}
+    
+    .review img{width:250px;height:130px}
+    .review img{width:250px;height:130px}
+    .review img{width:250px;height:130px}
+    .section2{font-family: "Montserrat", sans-serif;
+    margin:0px;text-align: center;background-color: rgb(145, 161, 173);
+         padding-top:30px;padding-bottom:200px}
+    .section2_p{font-weight: bold;font-size: 35px;color:white;margin:0px}
+    .section3{display:flex;flex-direction: column;
+        background-color: rgb(233, 229, 224);}
+
+    .section3_img{display:flex;justify-content: center;gap:110px;
+      position:relative;top:-110px}
+    .section3_1{display:flex;flex-direction:column;align-items: center;}
+    .section3_2{display:flex;flex-direction:column;align-items: center;}
+    .section3_3{display:flex;flex-direction:column;align-items: center;}
+     .section3_1 p{width:150px;text-align:center;}
+     .section3_1 h2{margin-bottom:0px;color:rgb(104, 120, 130)}
+
+    .section3_2 p{width:150px;text-align:center;}
+     .section3_2 h2{margin-bottom:0px;color:rgb(104, 120, 130)}
+
+     .section3_3 p{width:150px;text-align:center;}
+     .section3_3 h2{margin-bottom:0px;color:rgb(104, 120, 130)}
+
+    .section3_1 img{width:200px;height:200px;border-radius:100px}
+    .section3_2 img{width:200px;height:200px;border-radius:100px}
+    .section3_3 img{width:200px;height:200px;border-radius:100px}
+    .footer{font-family: "Montserrat", sans-serif;
+    margin:0px;text-align: center;
+    background-color: rgb(233, 229, 224);height:200px}
+    .hr_line{width:900px;border:1px solid rgb(104, 120, 130);height:0px;
+        margin:auto;position:relative;top:-50px;}
+    .map{display:flex;flex-direction: column;align-items: center;}
+    .map p{color:rgb(104, 120, 130);font-size: 50px;}
+    .map_loc{width:900px;height:300px}
+    .insta_link{}
+    .insta_link a{margin:0px;text-decoration: none;color:black;}
+    .strip{width:100%;height:50px;background-color:rgb(255, 255, 255)}
+    .footer{display: flex;flex-direction: row;justify-content: center;gap:120px}
+    .footer_1{display:flex;flex-direction: column;align-items: center;}
+    .footer_2{display:flex;flex-direction: column;align-items: flex-start;padding-top:30px;}
+    .footer_1 img{width:150px}
+
+ 
+@media screen and (max-width:1000px){
+  .map_loc{width:500px}
+}
+@media screen and (max-width:950px){
+    .section3_img{gap:50px}
+    .hr_line{width:700px}
+}
+@media screen and (max-width:900px){
+    
+}
+
+@media screen and (max-width:750px){
+.section3_img{gap:20px}
+.section3_1 img{width:150px;height:150px;border-radius:100px}
+.section3_2 img{width:150px;height:150px;border-radius:100px}
+.section3_3 img{width:150px;height:150px;border-radius:100px}
+.section3_1 h2{font-size: 20px;}
+.section3_2 h2{font-size: 20px;}
+.section3_3 h2{font-size: 20px;}
+.map p{font-size: 30px;}
+.hr_line{width:500px}
+.welcome_para1{font-size: 30px;}
+.welcome_para2{width:400px}
+.welcome_para3{font-size:30px}
+
+}
+
+@media screen and (max-width:650px){
+    
+    .services_row_1{flex-direction:column;gap:25px}
+    .services_row_2{flex-direction:column;gap:25px}
+    .services_sub_top{width:560px}
+
+    .services_1{margin:auto}
+    .services_2{margin:auto}
+    .services_3{margin:auto}
+    .services_4{margin:auto}
+    .btn1{margin-top:0px}
+    .btn4{margin-top:0px}
+    .service_1_img_p2{max-width: 500px;}
+    .service_2_img_p2{max-width: 500px;}
+    .service_3_img_p2{max-width: 500px;}
+    .service_4_img_p2{max-width: 500px;}
+    .review{width:500px}
+
+}
+
+@media screen and (max-width:650px){
+.menue{gap:10px}
+}
+@media screen and (max-width:550px){
+    .map_loc{width:340px;height:150px}
+    .hr_line{top:10px;width:320px}
+    .section2{padding-bottom:20px;padding-top:20px}
+    .section3_img{top:20px; flex-direction: column;}
+    .section3_1 img{width:250px;height:250px;border-radius: 300px;}
+    .section3_2 img{width:250px;height:250px;border-radius: 300px;}
+    .section3_3 img{width:250px;height:250px;border-radius: 300px;}
+    .section3_1 p{width:320px}
+    .section3_2 p{width:320px}
+    .section3_3 p{width:320px}
+    .review{width:300px}
+     .section2_p{font-size: 25px;}
+}
+
+@media screen and (max-width:500px){
+    .menue-toggle a{display:block !important ;margin:0px;
+        text-decoration:none;color:black}
+
+    .footer{flex-direction: column;gap:10px;
+    justify-content:flex-start;height:fit-content}
+
+   .welcome_para2{width:320px;font-size: 16px;} 
+   .welcome_para1{font-size: 22px;}
+   .welcome_para3{font-size:22px}
+   .service_1_img_p1{font-size: 20px;}
+   .service_2_img_p1{font-size: 20px;}
+   .service_3_img_p1{font-size: 20px;}
+   .service_4_img_p1{font-size:20px;}
+   .service_2_img_p1{font-size: 20px;}
+   .our_clients p{font-size:20px}
+   .section2_p {font-size:20px}
+   .hr_line{width:250px}
+   .map p{font-size:20px}
+   
+   .menue{
+   display:none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color:rgb(145, 161, 173);
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+  }
+.menue.active {
+    display: flex;
+  }
+
+  .submenue{
+    position:static;
+    width:100%;
+}
+.submenue.active{
+    display:block;
+}
+
+
+
+}
+@media screen and (max-width:400px){
+    .welcome_para2{width:280px}
+    .section3_1 p{width:300px}
+    .section3_2 p{width:280px}
+    .map_loc{width:280px}
+    .welcome_para2{width:280px} 
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="heading">
+      <div class="logo">
+            <img src="images/logo_final.png">
+        </div>
+    <ul style="list-style: none;"><li class="menue-toggle"><a href="javascript:void(0)">☰</a></li></ul>
+    <ul class="menue">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="javascript:void(0)"class="service-toggle">OUR SERVICES</a>
+    <ul class="submenue">
+       <li><a href="javascript:void(0);"onclick="showAlert()">Computer Center</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Website Designing</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Video Editing</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Cyber Cafe</a></li> 
+    </ul></li>
+
+    <li><a href="student_records.html">STUDENT ZONE</a></li>
+    </ul> 
+    </nav>
+
+    <div class="main_section">
+    <div class="section1">
+    <p class="welcome_para1">Welcome To The Preet Tech</p>  
+    <p class="welcome_para2">Patiala city near Modi College we run institute there We teach various Computer courses and provide Website and Video editing services. Join our institute for make growth in our skills. And give us chance to make your business professional websites.</p>
+    <p class="welcome_para3">Our services in Brief</p>
+
+    <div class="services_top">
+    <div class="services_sub_top">
+    <div class="services_row_1">
+    <div class="services_1">
+    <div class="services_1_img">
+    <img src="images/computer_center.jpeg">
+    </div>
+    <p class="service_1_img_p1">Computer Institute</p>
+    <p class="service_1_img_p2">We provide quality coaching services from basic computer, Website designing, Graphics designing, Video editing, Programming languages so on. </p>
+    <button class="btn1">Know more Click Here</button>
+    </div>
+    <div class="services_2">
+       <div class="services_2_img">
+        <img src="images/wesite_designing.jpeg">
+     </div>
+    <p class="service_2_img_p1">Web Site Designing</p>
+    <p class="service_2_img_p2">We develop front end Website ex: Blogs and personal sites, portfolios and Resumes sites to showcase your work fast loading pages, small business and Brochure sites, events and marketing microsites ex Temporary campaign pages or single purpose landing pages for speific events.</p>
+    <button class="btn2">Know more Click Here</button>
+
+      </div>
+
+
+      </div>
+
+     <div class="services_row_2">
+      <div class="services_3">
+      <div class="services_3_img">
+        <img src="images/video_editing.jpeg">
+     </div>
+     <p class="service_3_img_p1">Video Editing</p>
+    <p class="service_3_img_p2">Content creating for platform like youtube/social media designing to keep viewers higher engagement. And Corporate and Branding Content. Professional polished edits for company Promos, tranning videos, and product showcases.</p>
+    <button class="btn3">Know more Click Here</button>
+
+      </div>
+
+      <div class="services_4">
+      <div class="services_4_img">
+        <img src="images/cyber_cafe.jpeg">
+     </div>
+<p class="service_4_img_p1">Cyber Cafe</p>
+    <p class="service_4_img_p2">We provides Government and ID services(in India) ex Aadhar & Pan: corrections, new Pan application, aadhar pan linking so on. voter ID new and corrction. Passport applying. punjab's online certificate, Licenses. so on. </p>
+    <button class="btn4">Know more Click Here</button>
+      </div>
+    </div></div></div>
+
+    <div class="our_clients">
+        <p>Our Testimonials</p>
+    <div class="review">
+    <img src="images/review 1.png">
+    <img src="images/review 2.png">
+    <img src="images/review 3.png">
+     </div></div>
+</div>
+<div class="section2">
+  <div><img src="images/leaf.png"></div>
+  <p class="section2_p">What Makes us Special</p>
+</div>
+
+  <div class="section3">
+    <div class="section3_img">
+    <div class="section3_1"><img src="images/special_img1.png">
+    <h2>QUALITY</h2>
+    <p>We Provide Higher Quality in Affordable Prices</p>
+     </div>
+
+    <div class="section3_2"><img src="images/special_img2.png"> 
+    <h2>LIVE PROJECTS</h2>
+    <p>For students chance to work on live projects</p></div>
+    
+    <div class="section3_3"><img src="images/special_img3.png">
+    <h2>LOCATION</h2>
+    <p>For offline students very easy approachable location</p> </div>
+     </div>
+      
+     <div class="hr_line"></div>
+  <div class="map">
+    <p>Find Us In Patiala</p>
+  <iframe class="map_loc" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d860.9744062859445!2d76.39722134054728!3d30.325429672834268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sbaba%20dhyana%20tobha%20paitala!5e0!3m2!1sen!2sin!4v1779813484707!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   <p style="margin-bottom:15px">Find Us On Instagram</p>
+   <div class="insta_link"><a href="https://www.instagram.com/preet_tech97/" target="_blank">
+preet_tech97
+</a>    
+</div>
+
+</div>
+
+</div>
+  
+
+<div class="strip"></div>
+
+<div class="footer">
+<div class="footer_1">
+    <img src="images/logo_final_2.png">
+   <div>
+<a href="https://www.facebook.com/preetTech97" target="_blank"><img style="width:20px;margin:5px" src="images/facebook_logo.png"></a>
+<a href="https://www.instagram.com/preet_tech97/" target="_blank"><img style="width:20px;margin:5px" src="images/inst_logo.png"></a>
+    </div>
+</div>
+<div class="footer_2">
+    <div>PREET TECH</div>
+    <div>Patiala Near Modi college</div>
+    <div>preet97inder@gmail.com</div>
+    <div>Copyright © 2026 Preet Tech. All Rights Reserved.</div>
+    
+</div>
+</div>
+
+
+    </div>
+
+    <script>
+        function showAlert(){
+            alert("This page is under construction. comming soon! thanks");
+        }
+
+    let toggle=document.querySelector(".menue-toggle");
+    let menue=document.querySelector(".menue");
+    let serviceToggle = document.querySelector(".service-toggle");
+    let submenu = document.querySelector(".submenue");
+
+
+    toggle.addEventListener("click", () => {
+  menue.classList.toggle("active");
+});
+
+serviceToggle.addEventListener("click", function(){
+    submenu.classList.toggle("active");
+});
+
+    </script>
+</body>
+</html>

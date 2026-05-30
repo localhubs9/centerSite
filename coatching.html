@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">   
+    <style>
+     html{font-size:16px}
+    body{background-color: white;}
+    *{box-sizing:border-box; font-family: 'Montserrat', sans-serif;}
+
+    .heading{display:flex;justify-content: space-between;
+padding:10px;border:1px solid black;background-color: rgb(145, 161, 173);}
+     .menue{display:flex;list-style:none;margin-right:100px;
+      gap:50px;}
+     .menue li{position:relative;}
+    .menue li a{text-decoration: none;color:black;padding:10px;display:block}
+    .submenue{display:none;position:absolute;top:100%;
+    left:0;background-color: rgb(145, 161, 173);list-style: none;
+width:220px;} 
+   .submenue li a{color:black;padding:12px;}
+   .submenue li a:hover{background-color: #eee;}
+   .menue li:hover .submenue{display:block;}
+    .menue-toggle a{font-size: 25px;display:none !important}
+   .record_heading h2{text-align: center;}
+    .logo img{width:80px}
+     .logo{margin-left:20px}
+  .basic_overview_p1{text-align: center;font-style: italic;font-weight: bold;
+  font-size: 25px;}
+  .basic_overview_1 p{margin:0px;font-size: 16px;}
+.site_dev_overview_p1{text-align: center;font-style: italic;font-weight: bold;
+  font-size: 25px;}
+ .site_dev_overview_1 p{margin:0px;font-size: 16px;}
+ .video_edit_p{text-align: center;font-style: italic;font-weight: bold;
+  font-size: 25px;}
+  .video_edit_overview p{margin:0px;font-size: 16px;}
+  .video_edit_detail{display:none;}
+
+   .graphics_design_p{text-align: center;font-style: italic;font-weight: bold;
+  font-size: 25px;}
+  .basic_detail{display:none;font-family: "Open Sans", sans-serif;}
+  .basic_detail ul li{font-family: "Open Sans", sans-serif;}
+  .basic_detail p{margin:0px;}
+  .basic_detail h4{margin:0px;margin-bottom:5px;margin-top:4px;font-family: 'Courier New', Courier, monospace;}
+  
+  .site_dev_detail{display:none}
+  .graphics_design_detail{display:none}
+.showing{display:block}
+.gray{color:#4B5563}
+
+@media screen and (max-width:650px){
+.menue{gap:10px}
+}
+
+@media screen and (max-width:500px){
+    .menue-toggle a{display:block !important ;margin:0px;
+        text-decoration:none;color:black;}
+    
+   .menue{
+   display:none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color:rgb(145, 161, 173);
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+  }
+.menue.active {
+    display: flex;
+  }
+
+  .submenue{
+    position:static;
+    width:100%;
+}
+.submenue.active{
+    display:block;
+}
+}
+
+
+@media screen and (max-width:450px)
+{
+}
+
+
+@media screen and (max-width:416px)
+{
+}
+
+@media screen and (max-width:400px){
+   
+   
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="heading">
+      <div class="logo">
+            <img src="images/logo_final.png">
+        </div>
+    <ul style="list-style: none;"><li class="menue-toggle"><a href="javascript:void(0)">☰</a></li></ul>
+    <ul class="menue">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="javascript:void(0)"class="service-toggle">OUR SERVICES</a>
+    <ul class="submenue">
+       <li><a href="coatching.html">Computer Center</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Website Designing</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Video Editing</a></li>
+      <li><a href="cyber.html">Cyber Cafe</a></li> 
+    </ul></li>
+
+    <li><a href="student_records.html">STUDENT ZONE</a></li>
+    </ul> 
+    </nav>
+     <p>NOTE: These Fee structure is only for limited time. Offer served only for vacation time utilization for sake of societies welfare to increase discipline of learning amoung students.</p>
+   <div class="basic">
+  <div class="basic_overview">
+    <p class="basic_overview_p1">Basic Computer Course</p>
+   <div class="basic_overview_1">
+    <p><b><i>Duration</i></b>: 3 Months</p>
+    <p><b><i>Fee</i></b> 500/- Monthly</p>
+    <p><b><i>Batch</i></b>: 9:00 AM to 7:00 Pm</p>
+    <p><b><i>Batch Mode</i></b>:Offline and Online both</p>
+    <p><b><i>Time Duration</i></b>:1 to 1.5 hr</p>
+    <p><b><i>Certification</i></b>: Govt Approved ISO 9001:2015</p>
+    <p><b>Syllabus Overviews</b>:Microsoft Word, Excel, Advance Excel, Power point, Typing- English and Punjabi, Photo editing on photoshop, photopea, canva.</p>
+    <button class="btn" onclick="basicShow()">Explore More v</button><button style="margin-left:5px" onclick="basicHide()">Explore Less ^</button>
+</div>
+   </div>
+  <div class="basic_detail">
+    <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Why you should learn basic Computer in Such modern and Ai world.</h4>
+    <ul class="gray">
+        <li>You will observe how things work in computer. From basic power point slide making to implement advance Excel formulas you will observe how to manage our work and very important thing the hidden question arise in your mind how it work (will push you to explore more about field of computer.) </li>
+        <li>Some govt and private jobs Basic computer Knowledge is basic requirement</li>
+        <li>Boost Confidence in Technology: You said if i can apply excel formulas then I can also learn and use programming language so easyly.</li>
+    </ul>
+    <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Quick Overview Of Syllabus</h4>
+    <ul class="gray">
+        <li>MS WORD</li>
+        <ul>
+            <li>Introduction to MS Word</li>
+            <li>Text Formatting</li>
+            <li>Paragraph Formatting</li>
+            <li>Page Layout</li>
+            <li>Tables</li>
+            <li>Images & Shapes</li>
+            <li>Headers & Footers</li>
+            <li>Mail Merge</li>
+            <li>Spell Check</li>
+            <li>Printing & PDF Export</li>
+        </ul>
+        <li>MS Excel</li>
+        <ul>
+            <li>Introduction to Excel</li>
+            <li>Worksheets & Workbooks</li>
+            <li>Data Entry</li>
+            <li>Cell Formatting</li>
+            <li>Formulas & Functions</li>
+            <li>Charts & Graphs</li>
+            <li>Sorting & Filtering</li>
+            <li>Conditional Formatting</li>
+            <li>Data Validation</li>
+            <li>Printing Reports</li>
+        </ul>
+        <li>MS PowerPoint</li>
+        <ul>
+            <li>Introduction to PowerPoint</li>
+            <li>Creating Presentations</li>
+            <li>Slide Layouts</li>
+            <li>Themes & Design</li>
+            <li>Images, Shapes & Icons</li>
+            <li>SmartArt & Charts</li>
+            <li>Animations</li>
+            <li>Slide Transitions</li>
+            <li>Audio & Video Integration</li>
+            <li>Presentation & Slide Show</li>
+        </ul>
+         <li>Basic Use of photo editing softwares like photoshop and photopea. </li>
+         <li>Typing in English and Punjabi with minumum 30 WPM speed targeting.</li>
+    </ul>
+    
+    <br>
+    <button style="margin-left:5px" onclick="basicHide()">Explore Less ^</button>
+  </div>
+   </div>
+
+  <div class="site_dev">
+  <div class="site_dev_overview">
+    <p class="site_dev_overview_p1">Website designing</p>
+   <div class="site_dev_overview_1">
+    <p><b><i>Duration</i></b>: 3 Months</p>
+    <p><b><i>Fee</i></b> 500/- Monthly</p>
+    <p><b><i>Batch</i></b>: 9:00 AM to 7:00 Pm</p>
+    <p><b><i>Batch Mode</i></b>:Offline and Online both</p>
+    <p><b><i>Time Duration</i></b>:1 to 1.5 hr</p>
+    <p><b><i>Certification</i></b>: Govt Approved ISO 9001:2015</p>
+    <p><b>Syllabus Overviews</b>: HTML, CSS, Bootstrap, Javascript, Figma, photoshop.</p>
+    <p><b>Bonus tips:</b> Teach you git hub, host your first site free of cost.</p>
+    <button class="btn" onclick="site_devShow()">Explore More v</button><button style="margin-left:5px" onclick="site_devHide()">Explore Less ^</button>
+</div>
+   </div>
+  <div class="site_dev_detail">
+ <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Why you should learn to make website designing in such a modern Ai world, in which doing coding seems useless because Ai apps can give you every thing readymade!</h4>
+    <ul class="gray">
+        <li>Understand and customize AI-generated work instead of depending on it completely.</li>
+        <li>Create unique designs that match a brand's identity, goals, and its unique guidelines.</li>
+        <li>Fix errors and improve performance when AI-generated code is not perfect.</li>
+        <li>Communicate effectively with clients and turn their ideas into real websites.</li>
+        <li>This Build a valuable career skill that remains in demand across industries.</li>
+        <li>Develop problem-solving and technical thinking skills that go beyond website creation.</li>
+        <li>Gain the ability to create websites from scratch whenever needed.</li>
+    </ul>
+
+    <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">After Complete Course What Can you do.</h4>
+    <ul class="gray">
+        <li>Responsive Websites</li>
+        <li>Landing Pages</li>
+        <li>Business Websites</li>
+        <li>Portfolio Websites</li>
+        <li>Interactive Web Pages</li>
+        <li>Front-End Web Projects</li>
+           </ul>
+    <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Quick Overview Of Syllabus</h4>
+    <ul class="gray">
+        <li>HTML (HyperText Markup Language)</li>
+        <ul>
+            <li>Introduction to HTML</li>
+            <li>HTML Document Structure</li>
+            <li>Headings, Paragraphs & Text Formatting</li>
+            <li>Links & Navigation</li>
+            <li>Images & Multimedia</li>
+            <li>Lists (Ordered & Unordered)</li>
+            <li>Tables</li>
+            <li>Forms & Input Elements</li>
+            <li>Semantic HTML</li>
+            <li>HTML5 Features</li>
+        </ul>
+        <li>CSS (Cascading Style Sheets)</li>
+        <ul>
+            <li>Introduction to CSS</li>
+            <li>Selectors & Properties</li>
+            <li>Colors & Backgrounds</li>
+            <li>Fonts & Typography</li>
+            <li>Box Model</li>
+            <li>Margins, Padding & Borders</li>
+            <li>Flexbox</li>
+            <li>CSS Grid</li>
+            <li>Responsive Design</li>
+            <li>Transitions & Animations</li>
+            <li>Miscellaneous toppics</li>
+        </ul>
+        <li>Bootstrap</li>
+        <ul>
+            <li>Introduction to Bootstrap</li>
+            <li>Bootstrap Grid System</li>
+            <li>Containers & Layouts</li>
+            <li>Buttons & Forms</li>
+            <li>Cards & Alerts</li>
+            <li>Navbar & Navigation</li>
+            <li>Bootstrap Utilities</li>
+            <li>Modals & Popups</li>
+            <li>Carousel & Components</li>
+            <li>Responsive Website Development</li>
+        </ul>
+         <li>JavaScript</li>
+         <ul>
+            <li>Introduction to JavaScript</li>
+            <li>Variables & Data Types</li>
+            <li>Operators</li>
+            <li>Conditional Statements</li>
+            <li>Loops</li>
+            <li>Functions</li>
+            <li>Arrays & Objects</li>
+            <li>DOM Manipulation</li>
+            <li>Events Handling</li>
+            <li>Form Validation</li>
+            <li>ES6 Features</li>
+            <li>Basic Projects & Website Interactivity</li>
+            <li>Advance JavaScript</li>
+            <li>Miscellaneous toppics</li>
+         </ul>
+    </ul>
+    <br>
+<button style="margin-left:5px" onclick="site_devHide()">Explore Less ^</button>
+    
+  </div>
+   </div>
+
+   
+   <div class="video_edit">
+    <p class="video_edit_p">Video Editing on Premium Pro</p>
+    <div class="video_edit_overview">
+     <p><b><i>Duration</i></b>: 1 Months</p>
+    <p><b><i>Fee</i></b> 700/-</p>
+    <p><b><i>Batch</i></b>: 9:00 AM to 7:00 Pm</p>
+    <p><b><i>Batch Mode</i></b>:Offline and Online both</p>
+    <p><b><i>Time Duration</i></b>:1 to 1.5 hr</p>
+    <button class="btn" onclick="video_editShow()">Explore More v</button><button style="margin-left:5px" onclick="video_editHide()">Explore Less ^</button>
+    </div>
+    <div class="video_edit_detail">
+<h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Why you should learn Video Editing using this software, insted of this that this software is not so strong as compare to anoter softwares and tools for video editing!</h4>
+    <ul class="gray">
+        <li>It is very easy to learn video Editing using this tool as compare to anoter one</li>
+        <li>Industry Standard Software</li>
+        <li>Strong Job Market: most companys and clients demand this skills so job and freelancing opportunity increases</li>
+        <li>Suitables for:
+            <ul>
+                <li>YouTube Videos</li>
+                <li>Instagram Reels</li>
+                <li>Short Films</li>
+                <li>Wedding Videos</li>
+                <li>Corporate Videos</li>
+                <li>Advertisements</li>
+            </ul>
+        </li>
+    </ul>
+    <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Quick Overview Of Syllabus</h4>
+    <ul class="gray">
+        <li>Introduction to video Editing</li>
+        <ul>
+            <li>Video Editing Basics</li>
+            <li>Premiere Pro Interface</li>
+            <li>Project Setup</li>
+            <li>Importing Media Files</li>
+        </ul>
+        <li>Timeline Editing</li>
+        <ul>
+            <li>Timeline Tools</li>
+            <li>Cutting & Trimming</li>
+            <li>Ripple Edit & Rolling Edit</li>
+            <li>Sequence Management</li>
+        </ul>
+        <li>Audio Editing</li>
+        <ul>
+            <li>Audio Import & Management</li>
+            <li>Voice Enhancement</li>
+            <li>Background Music</li>
+            <li>Audio Effects & Mixing</li>
+        </ul>
+         <li>Video Effects & Transitions </li>
+         <ul>
+            <li>Video Transitions</li>
+            <li>Motion Effects</li>
+            <li>Keyframes</li>
+            <li>Speed Control (Slow Motion / Fast Motion)</li>
+         </ul>
+        <li>Color Correction & Color Grading</li>
+         <ul>
+            <li>Basic Color Correction</li>
+            <li>Lumetri Color Panel</li>
+            <li>Cinematic Look Creation</li>
+            <li>White Balance & Exposure</li>
+         </ul>
+
+         <li>Titles & Motion Graphics</li>
+         <ul>
+            <li>Text Animation</li>
+            <li>Lower Thirds</li>
+            <li>Intro & Outro Design</li>
+            <li>Essential Graphics Panel</li>
+         </ul>
+
+         <li>Green Screen (Chroma Key)</li>
+         <ul>
+            <li>Green Screen Removal</li>
+            <li>Background Replacement</li>
+            <li>Advanced Keying Techniques</li>
+         </ul>
+        <li>Advanced Editing</li>
+         <ul>
+            <li>Multi-Camera Editing</li>
+            <li>Nesting Sequences</li>
+            <li>Masking & Tracking</li>
+            <li>Adjustment Layers</li>
+         </ul>
+          <li>Export & Delivery</li>
+         <ul>
+            <li>Export Settings</li>
+            <li>Different Video Formats</li>
+         </ul>
+
+    </ul>
+<button style="margin-left:5px" onclick="video_editHide()">Explore Less ^</button>
+    </div>
+    
+   </div>
+
+   <div class="graphics_design"> 
+   <p class="graphics_design_p">Graphics Designing</p>
+   <p>Teach graphics Designing usign photoshop.</p>
+   <button class="btn" onclick="graphics_designShow()">Explore More v</button><button style="margin-left:5px" onclick="graphics_designHide()">Explore Less ^</button>
+   <div class="graphics_design_detail">
+    <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Quick Overview Of Syllabus</h4>
+    <ul class="gray">
+        <li>Introduction to Photoshop</li>
+        <ul>
+            <li>Photoshop Interface</li>
+            <li>Tools & Panels</li>
+            <li>Workspace Customization</li>
+            <li>Creating New Documents</li>
+        </ul>
+        <li>Selection Tools</li>
+        <ul>
+            <li>Marquee Tools</li>
+            <li>Lasso Tools</li>
+            <li>Quick Selection Tool</li>
+            <li>Object Selection Tool</li>
+            <li>Select and Mask</li>
+        </ul>
+        <li>Layers & Layer Management</li>
+        <ul>
+            <li>Creating and Managing Layers</li>
+            <li>Layer Groups</li>
+            <li>Layer Opacity</li>
+            <li>Layer Styles</li>
+            <li>Smart Objects</li>
+        </ul>
+         <li>Image Editing & Retouching</li>
+        <ul>
+            <li>Crop Tool</li>
+            <li>Resize & Resolution</li>
+            <li>Spot Healing Brush</li>
+            <li>Clone Stamp Tool</li>
+            <li>Content-Aware Fill</li>
+        </ul>
+
+        <li>Photo Retouching</li>
+        <ul>
+            <li>Skin Retouching</li>
+            <li>Blemish Removal</li>
+            <li>Eye & Teeth Enhancement</li>
+            <li>Portrait Retouching</li>
+            <li>Frequency Separation Basics</li>
+        </ul>
+
+        <li>Color Correction</li>
+        <ul>
+            <li>Brightness & Contrast</li>
+            <li>Levels</li>
+            <li>Curves</li>
+            <li>Hue & Saturation</li>
+            <li>Color Balance</li>
+        </ul>
+         <li>Working with Text</li>
+        <ul>
+            <li>Text Tool</li>
+            <li>Character & Paragraph Panels</li>
+            <li>Text Effects</li>
+            <li>Typography Basics</li>
+        </ul>
+        <li>Design Creation</li>
+        <ul>
+            <li>Poster Design</li>
+            <li>Banner Design</li>
+            <li>Flyer Design</li>
+            <li>Brochure Design</li>
+            <li>Social Media Post Design</li>
+        </ul>
+         <li>Photo Manipulation </li>
+        <ul>
+            <li>Background Removal</li>
+            <li>Image Compositing</li>
+            <li>Blending Modes</li>
+            <li>Creative Effects</li>
+            <li>Surreal Artwork Creation</li>
+        </ul>
+         <li>Masks & Advanced Editing </li>
+        <ul>
+            <li>Layer Masks</li>
+            <li>Clipping Masks</li>
+            <li>Vector Masks</li>
+            <li>Advanced Selections </li>
+        </ul>
+
+         <li>Digital Painting & Brushes concepts </li>
+        <ul>
+            <li>Brush Tool</li>
+            <li>Custom Brushes</li>
+            <li>Brush Settings</li>
+        </ul>
+         <li>Applications: Web & Social Media Graphics </li>
+        <ul>
+            <li>YouTube Thumbnails</li>
+            <li>Instagram Posts</li>
+            <li>Facebook Banners</li>
+            <li>Web Graphics</li>
+        </ul>
+
+         <li>Export & Print Setup </li>
+        <ul>
+            <li>File Formats (JPG, PNG, PSD, PDF)</li>
+            <li>Print Settings</li>
+            <li>Export for Web</li>
+            <li>Color Modes (RGB & CMYK)</li>
+        </ul>
+        
+        
+    </ul>
+    <br>
+<button style="margin-left:5px" onclick="graphics_designHide()">Explore Less ^</button>
+   </div>
+   </div>
+
+
+
+    <script>
+        function showAlert(){
+            alert("This page is under construction. comming soon! thanks");
+        }
+
+    let toggle=document.querySelector(".menue-toggle");
+    let menue=document.querySelector(".menue");
+    let serviceToggle = document.querySelector(".service-toggle");
+    let submenu = document.querySelector(".submenue");
+
+
+    toggle.addEventListener("click", () => {
+  menue.classList.toggle("active");
+});
+
+serviceToggle.addEventListener("click", function(){
+    submenu.classList.toggle("active");
+});
+
+let basicDetail=document.querySelector(".basic_detail");
+let siteDevDetail=document.querySelector(".site_dev_detail");
+let video_editDetail=document.querySelector(".video_edit_detail");
+let graphics_designDetail=document.querySelector(".graphics_design_detail");
+
+function basicShow(){basicDetail.classList.add("showing");}
+function basicHide(){basicDetail.classList.remove("showing");}
+
+function site_devShow(){siteDevDetail.classList.add("showing");}
+function site_devHide(){siteDevDetail.classList.remove("showing");}
+
+function video_editShow(){video_editDetail.classList.add("showing");}
+function video_editHide(){video_editDetail.classList.remove("showing");}
+
+function graphics_designShow(){graphics_designDetail.classList.add("showing");}
+function graphics_designHide(){graphics_designDetail.classList.remove("showing");}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">   
+    <style>
+   html{font-size:16px}
+    body{background-color: white;}
+    *{box-sizing:border-box; font-family: 'Montserrat', sans-serif;}
+
+    .heading{display:flex;justify-content: space-between;
+padding:10px;border:1px solid black;background-color: rgb(145, 161, 173);}
+     .menue{display:flex;list-style:none;margin-right:100px;
+      gap:50px;}
+     .menue li{position:relative;}
+    .menue li a{text-decoration: none;color:black;padding:10px;display:block}
+    .submenue{display:none;position:absolute;top:100%;
+    left:0;background-color: rgb(145, 161, 173);list-style: none;
+width:220px;} 
+   .submenue li a{color:black;padding:12px;}
+   .submenue li a:hover{background-color: #eee;}
+   .menue li:hover .submenue{display:block;}
+    .menue-toggle a{font-size: 25px;display:none !important}
+   .record_heading h2{text-align: center;}
+    .logo img{width:80px}
+     .logo{margin-left:20px}
+     
+@media screen and (max-width:650px){
+.menue{gap:10px}
+}
+
+@media screen and (max-width:500px){
+    .menue-toggle a{display:block !important ;margin:0px;
+        text-decoration:none;color:black;}
+    
+   .menue{
+   display:none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color:rgb(145, 161, 173);
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+  }
+.menue.active {
+    display: flex;
+  }
+
+  .submenue{
+    position:static;
+    width:100%;
+}
+.submenue.active{
+    display:block;
+}
+}
+
+
+@media screen and (max-width:450px)
+{
+}
+
+
+@media screen and (max-width:416px)
+{
+}
+
+@media screen and (max-width:400px){
+   
+   
+}
+
+    </style>
+</head>
+<body>
+    <nav class="heading">
+      <div class="logo">
+            <img src="images/logo_final.png">
+        </div>
+    <ul style="list-style: none;"><li class="menue-toggle"><a href="javascript:void(0)">☰</a></li></ul>
+    <ul class="menue">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="javascript:void(0)"class="service-toggle">OUR SERVICES</a>
+    <ul class="submenue">
+       <li><a href="javascript:void(0);"onclick="showAlert()">Computer Center</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Website Designing</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Video Editing</a></li>
+      <li><a href="javascript:void(0);"onclick="showAlert()">Cyber Cafe</a></li> 
+    </ul></li>
+
+    <li><a href="student_records.html">STUDENT ZONE</a></li>
+    </ul> 
+    </nav>
+
+    <h4>this page is under construction, comming soon! should check out for more exclusive offers later. Thanks.</h4>
+    <script>
+        function showAlert(){
+            alert("This page is under construction. comming soon! thanks");
+        }
+
+    let toggle=document.querySelector(".menue-toggle");
+    let menue=document.querySelector(".menue");
+    let serviceToggle = document.querySelector(".service-toggle");
+    let submenu = document.querySelector(".submenue");
+
+
+    toggle.addEventListener("click", () => {
+  menue.classList.toggle("active");
+});
+
+serviceToggle.addEventListener("click", function(){
+    submenu.classList.toggle("active");
+});
+
+    </script>
+</body>
+</html>

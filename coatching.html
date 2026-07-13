@@ -22,9 +22,9 @@ padding:10px;border:1px solid black;background-color: rgb(145, 161, 173);}
       gap:50px;}
      .menue li{position:relative;}
     .menue li a{text-decoration: none;color:black;padding:10px;display:block}
-    .submenue{display:none;position:absolute;top:100%;
+    .submenue{display:none;position:absolute;top:calc(100% - 2px);
     left:0;background-color: rgb(145, 161, 173);list-style: none;
-width:220px;} 
+width:220px;}
    .submenue li a{color:black;padding:12px;}
    .submenue li a:hover{background-color: #eee;}
    .menue li:hover .submenue{display:block;}
@@ -32,19 +32,68 @@ width:220px;}
    .record_heading h2{text-align: center;}
     .logo img{width:80px}
      .logo{margin-left:20px}
-  .basic_overview_p1{text-align: center;font-style: italic;font-weight: bold;
-  font-size: 25px;}
-  .basic_overview_1 p{margin:0px;font-size: 16px;}
+  .heading_common{position:relative;margin:30px auto;
+    width:fit-content;padding:0px}
+  .basic_overview{position:relative;}
+  .overview_common_h{text-align: center;font-style: italic;color:white;
+   background-color: #16A34A;width:fit-content;margin:40px auto;margin:0px;
+   padding:12px 40px;clip-path: polygon(25px 0,100% 0,calc(100% - 25px) 100%,0 100%);}
+  
+.top{width:60%;background-color:#1F2937;height:4px;position:absolute;top:-10px;
+    left:15px;animation:topLine 1s ease forwards;}
+
+.top::before{content:"";position:absolute;width:4px;height:30px;background-color:#1F2937;
+    left:-10px;top:0px;transform: skew(-25deg);animation:topBar 1s ease forwards;}
+
+.bottom{width:60%;background-color:#1F2937;height:4px;position:absolute;bottom:-10px;
+    right:15px;animation:bottomLine 1s ease forwards;}
+
+.bottom::before{content:"";position:absolute;width:4px;height:30px;background-color:#1F2937;
+    right:-9px;bottom:0px;transform: skew(-25deg);animation:bottomBar 1s ease forwards;}
+    
+
+@keyframes topLine{
+    from{
+        width:90%}
+    to{
+        width:60%;
+    }
+}
+
+
+@keyframes topBar{
+    from{
+        height:0;transform: translateX(16px);}
+    to{
+        height:30px;
+    }
+}
+
+
+@keyframes bottomLine{
+    from{
+        width:90%}
+    to{
+        width:60%;
+    }
+}
+
+
+@keyframes bottomBar{
+    from{
+        height:0;transform: translateX(-16px);
+    }
+    to{
+        height:30px;
+    }
+}
+.basic_overview_1 p{margin:0px;font-size: 16px;}
 .site_dev_overview_p1{text-align: center;font-style: italic;font-weight: bold;
-  font-size: 25px;}
- .site_dev_overview_1 p{margin:0px;font-size: 16px;}
- .video_edit_p{text-align: center;font-style: italic;font-weight: bold;
-  font-size: 25px;}
+  font-size: 25px;position:relative}
+ 
   .video_edit_overview p{margin:0px;font-size: 16px;}
   .video_edit_detail{display:none;}
-
-   .graphics_design_p{text-align: center;font-style: italic;font-weight: bold;
-  font-size: 25px;}
+  
   .basic_detail{display:none;font-family: "Open Sans", sans-serif;}
   .basic_detail ul li{font-family: "Open Sans", sans-serif;}
   .basic_detail p{margin:0px;}
@@ -54,6 +103,37 @@ width:220px;}
   .graphics_design_detail{display:none}
 .showing{display:block}
 .gray{color:#4B5563}
+
+.btn{padding:8px 20px;border-radius: 20px;background:linear-gradient(to right,#48C774, #16A085)
+    ;color:white;font-weight: bold;
+  display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer}
+  .btn img{width:24px;height:24px; animation:rotateIcon 5s linear infinite;}
+
+  @keyframes rotateIcon{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.btn2{padding:10px 25px;border-radius: 20px;background:linear-gradient(to right,#48C774, #16A085)
+    ;color:white;font-weight: bold;
+  display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;
+}
+
+.btn2 img{width:10px;height:10px;animation:slideIcon 5s linear infinite;
+animation-fill-mode: none;transform:translateY(5px);}
+@keyframes slideIcon{
+    0%{transform:translateY(5);}
+    25%{transform:translateY(-5px);}
+    50%{opacity:0;display:none;transform:translateY(5px);}
+    80%{opacity:1;disply:block;transform:translateY(-5px);}
+    100%{opacity:0;disply:none;transform:translateY(5px);}
+}
+
+
 
 @media screen and (max-width:650px){
 .menue{gap:10px}
@@ -115,27 +195,29 @@ width:220px;}
     <li><a href="javascript:void(0)"class="service-toggle">OUR SERVICES</a>
     <ul class="submenue">
        <li><a href="coatching.html">Computer Center</a></li>
-      <li><a href="javascript:void(0);"onclick="showAlert()">Website Designing</a></li>
-      <li><a href="javascript:void(0);"onclick="showAlert()">Video Editing</a></li>
       <li><a href="cyber.html">Cyber Cafe</a></li> 
     </ul></li>
 
     <li><a href="student_records.html">STUDENT ZONE</a></li>
     </ul> 
     </nav>
-     <p>NOTE: These Fee structure is only for limited time. Offer served only for vacation time utilization for sake of societies welfare to increase discipline of learning amoung students.</p>
-   <div class="basic">
+
+    <div class="basic">
   <div class="basic_overview">
-    <p class="basic_overview_p1">Basic Computer Course</p>
+
+    <div class="heading_common">
+    <h2 class="overview_common_h">Basic Computer Course</h2>
+    <span class="top"></span>
+    <span class="bottom"></span>
+    </div>
    <div class="basic_overview_1">
     <p><b><i>Duration</i></b>: 3 Months</p>
-    <p><b><i>Fee</i></b> 500/- Monthly</p>
     <p><b><i>Batch</i></b>: 9:00 AM to 7:00 Pm</p>
     <p><b><i>Batch Mode</i></b>:Offline and Online both</p>
     <p><b><i>Time Duration</i></b>:1 to 1.5 hr</p>
     <p><b><i>Certification</i></b>: Govt Approved ISO 9001:2015</p>
     <p><b>Syllabus Overviews</b>:Microsoft Word, Excel, Advance Excel, Power point, Typing- English and Punjabi, Photo editing on photoshop, photopea, canva.</p>
-    <button class="btn" onclick="basicShow()">Explore More v</button><button style="margin-left:5px" onclick="basicHide()">Explore Less ^</button>
+    <button class="btn" onclick="basicShow()">Explore More <img src="images/button_explore.png"></button><button style="margin-left:5px" class="btn2" onclick="basicHide()">Explore Less <img src="images/aerro.png"> </button>
 </div>
    </div>
   <div class="basic_detail">
@@ -191,23 +273,28 @@ width:220px;}
     </ul>
     
     <br>
-    <button style="margin-left:5px" onclick="basicHide()">Explore Less ^</button>
+    <button style="margin-left:5px" class="btn2" onclick="basicHide()">Explore Less <img src="images/aerro.png"></button>
   </div>
    </div>
 
   <div class="site_dev">
   <div class="site_dev_overview">
-    <p class="site_dev_overview_p1">Website designing</p>
+     
+    <div class="heading_common">
+    <h2 class="overview_common_h">Website designing</h2>
+    <span class="top"></span>
+    <span class="bottom"></span>
+    </div>
+
    <div class="site_dev_overview_1">
     <p><b><i>Duration</i></b>: 3 Months</p>
-    <p><b><i>Fee</i></b> 500/- Monthly</p>
     <p><b><i>Batch</i></b>: 9:00 AM to 7:00 Pm</p>
     <p><b><i>Batch Mode</i></b>:Offline and Online both</p>
     <p><b><i>Time Duration</i></b>:1 to 1.5 hr</p>
     <p><b><i>Certification</i></b>: Govt Approved ISO 9001:2015</p>
     <p><b>Syllabus Overviews</b>: HTML, CSS, Bootstrap, Javascript, Figma, photoshop.</p>
     <p><b>Bonus tips:</b> Teach you git hub, host your first site free of cost.</p>
-    <button class="btn" onclick="site_devShow()">Explore More v</button><button style="margin-left:5px" onclick="site_devHide()">Explore Less ^</button>
+    <button class="btn" onclick="site_devShow()">Explore More <img src="images/button_explore.png"></button><button style="margin-left:5px" class="btn2" onclick="site_devHide()">Explore Less <img src="images/aerro.png"></button>
 </div>
    </div>
   <div class="site_dev_detail">
@@ -292,21 +379,25 @@ width:220px;}
          </ul>
     </ul>
     <br>
-<button style="margin-left:5px" onclick="site_devHide()">Explore Less ^</button>
+<button style="margin-left:5px" class="btn2" onclick="site_devHide()">Explore Less <img src="images/aerro.png"></button>
     
   </div>
    </div>
 
    
-   <div class="video_edit">
-    <p class="video_edit_p">Video Editing on Premium Pro</p>
+   <div class="video_edit">    
+    <div class="heading_common">
+    <h2 class="overview_common_h">Video Editing on Premium Pro</h2>
+    <span class="top"></span>
+    <span class="bottom"></span>
+    </div> 
+    
     <div class="video_edit_overview">
-     <p><b><i>Duration</i></b>: 1 Months</p>
-    <p><b><i>Fee</i></b> 700/-</p>
+     <p><b><i>Duration</i></b>: 1 to 2 Months</p>
     <p><b><i>Batch</i></b>: 9:00 AM to 7:00 Pm</p>
     <p><b><i>Batch Mode</i></b>:Offline and Online both</p>
     <p><b><i>Time Duration</i></b>:1 to 1.5 hr</p>
-    <button class="btn" onclick="video_editShow()">Explore More v</button><button style="margin-left:5px" onclick="video_editHide()">Explore Less ^</button>
+    <button class="btn" onclick="video_editShow()">Explore More <img src="images/button_explore.png"></button><button style="margin-left:5px" class="btn2" onclick="video_editHide()">Explore Less <img src="images/aerro.png"></button>
     </div>
     <div class="video_edit_detail">
 <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Why you should learn Video Editing using this software, insted of this that this software is not so strong as compare to anoter softwares and tools for video editing!</h4>
@@ -391,15 +482,22 @@ width:220px;}
          </ul>
 
     </ul>
-<button style="margin-left:5px" onclick="video_editHide()">Explore Less ^</button>
+<button style="margin-left:5px" class="btn2" onclick="video_editHide()">Explore Less <img src="images/aerro.png"></button>
     </div>
     
    </div>
 
    <div class="graphics_design"> 
-   <p class="graphics_design_p">Graphics Designing</p>
+
+   
+   <div class="heading_common">
+    <h2 class="overview_common_h">Graphics Designing</h2>
+    <span class="top"></span>
+    <span class="bottom"></span>
+    </div>
+
    <p>Teach graphics Designing usign photoshop.</p>
-   <button class="btn" onclick="graphics_designShow()">Explore More v</button><button style="margin-left:5px" onclick="graphics_designHide()">Explore Less ^</button>
+   <button class="btn" onclick="graphics_designShow()">Explore More <img src="images/button_explore.png"></button><button style="margin-left:5px" class="btn2" onclick="graphics_designHide()">Explore Less <img src="images/aerro.png"></button>
    <div class="graphics_design_detail">
     <h4 style="text-decoration:underline;text-underline-offset: 4px;color:#0D9488">Quick Overview Of Syllabus</h4>
     <ul class="gray">
@@ -508,7 +606,7 @@ width:220px;}
         
     </ul>
     <br>
-<button style="margin-left:5px" onclick="graphics_designHide()">Explore Less ^</button>
+<button style="margin-left:5px" class="btn2" onclick="graphics_designHide()">Explore Less <img src="images/aerro.png"></button>
    </div>
    </div>
 

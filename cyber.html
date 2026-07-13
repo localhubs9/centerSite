@@ -33,6 +33,67 @@ width:220px;}
     .logo img{width:80px}
      .logo{margin-left:20px}
      
+ .heading_common{position:relative;margin:30px auto;
+    width:fit-content;padding:0px}
+  .basic_overview{position:relative;}
+  .overview_common_h{text-align: center;font-style: italic;color:white;
+   background-color: #16A34A;width:fit-content;margin:40px auto;margin:0px;
+   padding:12px 40px;clip-path: polygon(25px 0,100% 0,calc(100% - 25px) 100%,0 100%);}
+  
+.top{width:60%;background-color:#1F2937;height:4px;position:absolute;top:-10px;
+    left:15px;animation:topLine 1s ease forwards;}
+
+.top::before{content:"";position:absolute;width:4px;height:30px;background-color:#1F2937;
+    left:-9px;top:0px;transform: skew(-25deg);animation:topBar 1s ease forwards;}
+
+.bottom{width:60%;background-color:#1F2937;height:4px;position:absolute;bottom:-10px;
+    right:15px;animation:bottomLine 1s ease forwards;}
+
+.bottom::before{content:"";position:absolute;width:4px;height:30px;background-color:#1F2937;
+    right:-9px;bottom:0px;transform: skew(-25deg);animation:bottomBar 1s ease forwards;}
+    
+
+@keyframes topLine{
+    from{
+        width:90%}
+    to{
+        width:60%;
+    }
+}
+
+
+@keyframes topBar{
+    from{
+        height:0;transform: translateX(16px);}
+    to{
+        height:30px;
+    }
+}
+
+
+@keyframes bottomLine{
+    from{
+        width:90%}
+    to{
+        width:60%;
+    }
+}
+
+
+@keyframes bottomBar{
+    from{
+        height:0;transform: translateX(-16px);
+    }
+    to{
+        height:30px;
+    }
+}
+
+.cyber_list{line-height: 25px;}
+
+
+
+
 @media screen and (max-width:650px){
 .menue{gap:10px}
 }
@@ -91,17 +152,45 @@ width:220px;}
     <li><a href="index.html">HOME</a></li>
     <li><a href="javascript:void(0)"class="service-toggle">OUR SERVICES</a>
     <ul class="submenue">
-       <li><a href="javascript:void(0);"onclick="showAlert()">Computer Center</a></li>
-      <li><a href="javascript:void(0);"onclick="showAlert()">Website Designing</a></li>
-      <li><a href="javascript:void(0);"onclick="showAlert()">Video Editing</a></li>
-      <li><a href="javascript:void(0);"onclick="showAlert()">Cyber Cafe</a></li> 
+       <li><a href="coatching.html">Computer Center</a></li>
+       <li><a href="cyber.html">Cyber Cafe</a></li> 
     </ul></li>
 
     <li><a href="student_records.html">STUDENT ZONE</a></li>
     </ul> 
     </nav>
 
-    <h4>this page is under construction, comming soon! should check out for more exclusive offers later. Thanks.</h4>
+<div class="heading_common">
+    <h2 class="overview_common_h">Cyber Caffe</h2>
+    <span class="top"></span>
+    <span class="bottom"></span>
+    </div>
+
+
+<ul class="cyber_list">
+<li>Pan card Applying/Update/Lost Reprint</li>
+<li>Pan And Aadhar card linking</li>
+<li>Aadhar card Address update</li>
+<li>Voter Card Applying/ Update any corrections</li>
+<li>passport applying/ Renew</li>
+<li>Udhyam Certificate Applying/ Update</li>
+<li>Scholarship Form filling</li>
+<li>Driving Licence Applying</li>
+<li>Vehical Rc Renew/Update</li>
+<li>Eshram Card</li>
+<li>Birth Certificate Appling/update corrction</li>
+<li>Birth Certificate Digital</li>
+<li>Birth Certificate addition name of child</li>
+<li>Punjab Recident Certificate</li>
+<li>Cast certificate SC/BC </li>
+<li>Pension Applying: Old age pension</li>
+<li>Pension Appling: Widow Pension</li>
+<li>Pension Appling: Disability Pension</li>
+<li>Econimically weaker section (EWS) certificate</li>
+<li>labour card</li>
+<li>Govt post form filling</li>
+</ul>
+
     <script>
         function showAlert(){
             alert("This page is under construction. comming soon! thanks");
